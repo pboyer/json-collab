@@ -3,13 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fff;
+  --input-background: #aaa;
+  --foreground: #000;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
+    --input-background: #222;
     --foreground: #ededed;
   }
 }
@@ -17,5 +19,28 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: monospace;
+  font-size: 11px;
+}
+
+textarea {
+  color: black;
+}
+
+ul {
+  margin-left: 8px;
+}
+
+button {
+  padding: 4px;
+  border: 1px solid var(--foreground);
+  margin: 2px;
+}
+
+input,
+select {
+  margin: 2px;
+  padding: 4px;
+  background: var(--input-background);
+  border: 1px solid var(--foreground);
 }
