@@ -20,7 +20,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: monospace;
-  font-size: 11px;
+  font-size: 20px;
 }
 
 textarea {
@@ -32,15 +32,24 @@ ul {
 }
 
 button {
-  padding: 4px;
   border: 1px solid var(--foreground);
-  margin: 2px;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 input,
 select {
-  margin: 2px;
-  padding: 4px;
   background: var(--input-background);
   border: 1px solid var(--foreground);
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-left: 4px;
+  margin-right: 4px;
 }

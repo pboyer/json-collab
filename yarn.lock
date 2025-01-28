@@ -260,6 +260,28 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@liveblocks/client@2.16.1", "@liveblocks/client@^2.16.1":
+  version "2.16.1"
+  resolved "https://registry.yarnpkg.com/@liveblocks/client/-/client-2.16.1.tgz#d0e078bb0cb72e49e72d3f9c06e6623c9f47f6db"
+  integrity sha512-+F+nPmrLKSkM62ARlohOlDlcG6zpQE5yESvcfoc99nNyw4/IotAD6/TAICVW3gQG28wjg8SDOKOixtpJmoPo1A==
+  dependencies:
+    "@liveblocks/core" "2.16.1"
+
+"@liveblocks/core@2.16.1":
+  version "2.16.1"
+  resolved "https://registry.yarnpkg.com/@liveblocks/core/-/core-2.16.1.tgz#51f7c2f9cf2893a3eb62cdab30d7c31dfb84f1f3"
+  integrity sha512-hpZQpEq5g139dNu0izIYVKGUSE+wGHl3pokznacegBB58TNanMcrQOv8qWMDbASPJhkPV/Z04OXC0z/YaZT6aw==
+
+"@liveblocks/yjs@^2.16.1":
+  version "2.16.1"
+  resolved "https://registry.yarnpkg.com/@liveblocks/yjs/-/yjs-2.16.1.tgz#d58ad0b0f084c91f69506e32ac83b515c7a45341"
+  integrity sha512-KlGw425iHk6tUU2TRo4mxPhKk/OZ07pFz3DM4Zom0fzpZczv5c5OyBH3wmJfKVkAxWDDRN+H0P3JVFbpJ0OWtA==
+  dependencies:
+    "@liveblocks/client" "2.16.1"
+    "@liveblocks/core" "2.16.1"
+    js-base64 "^3.7.7"
+    y-indexeddb "^9.0.12"
+
 "@next/env@15.1.6":
   version "15.1.6"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-15.1.6.tgz#2fa863d8c568a56b1c8328a86e621b8bdd4f2a20"
@@ -1898,6 +1920,11 @@ jiti@^1.21.6:
   version "1.21.7"
   resolved "https://registry.yarnpkg.com/jiti/-/jiti-1.21.7.tgz#9dd81043424a3d28458b193d965f0d18a2300ba9"
   integrity sha512-/imKNG4EbWNrVjoNC/1H5/9GFy+tqjGBHCaSsN+P2RnPqjsLmv6UD3Ej+Kj8nBWaRAwyk7kK5ZUc+OEatnTR3A==
+
+js-base64@^3.7.7:
+  version "3.7.7"
+  resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-3.7.7.tgz#e51b84bf78fbf5702b9541e2cb7bfcb893b43e79"
+  integrity sha512-7rCnleh0z2CkXhH67J8K1Ytz0b2Y+yxTPL+/KOJoa20hfnVQ/3/T6W/KflYI4bRHRagNeXeU2bkNGI3v1oS/lw==
 
 "js-tokens@^3.0.0 || ^4.0.0":
   version "4.0.0"
