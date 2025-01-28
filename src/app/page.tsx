@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback, ReactNode } from "react";
 import * as Y from "yjs";
 import { createClient } from "@liveblocks/client";
 import { LiveblocksYjsProvider } from "@liveblocks/yjs";
+import { Value } from "./value";
 // import { WebsocketProvider } from "y-websocket";
 
 // sketch for higharc
@@ -14,51 +15,10 @@ import { LiveblocksYjsProvider } from "@liveblocks/yjs";
 // undo or redo needs to be re-designed (it is simple don't worry)
 // websocket sync runs server side - when state changes, we post it to the server
 
-type Value = boolean | string | number | object;
-
 const client = createClient({
   publicApiKey:
     "pk_dev_SXt-Mf0puijXLUdysP0JnBAF8ffn53LrN0cgLAvsvWpbE59AawQl0IiI9X61DcmC",
 });
-
-export function valueToYType<T extends Value>(
-  obj: T
-): Value | Y.AbstractType<T> {
-  const t = typeof obj;
-
-  if (
-    t === "string" ||
-    t === "boolean" ||
-    t === "number" ||
-    t === "undefined" ||
-    obj === null
-  ) {
-    return obj;
-  }
-
-  if (ArrayBuffer.isView(obj)) {
-    return obj;
-  }
-
-  if (Array.isArray(obj)) {
-    const arr = new Y.Array();
-    arr.push(obj.map((val) => valueToYType(val)));
-    return arr;
-  }
-
-  if (t === "object") {
-    const map = new Y.Map();
-
-    for (const key of Object.keys(obj)) {
-      const res = valueToYType((obj as { [key: string]: Value })[key]);
-      map.set(key, res);
-    }
-
-    return map;
-  }
-
-  throw new TypeError("unknown type" + typeof obj);
-}
 
 interface User {
   name: string;
@@ -95,7 +55,9 @@ export default function Page() {
 
     const cb = () =>
       setUsers(
-        Array.from(awareness.getStates().values()).map((x) => x.user) as User[]
+        Array.from(awareness.getStates().values()).map(
+          (x) => (x as { user: User }).user
+        ) as User[]
       );
     awareness.on("change", cb);
     cb();
